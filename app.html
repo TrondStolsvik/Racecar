@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>APP NAME - A Coding Project By Trond Stolsvik</title>
+    <title>Racecar - A Coding Project By Trond Stolsvik</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -40,7 +40,7 @@
             class="d-inline-block align-text-top"
             height="24"
           />
-          APP NAME</a
+          Racecar</a
         >
         <button
           class="navbar-toggler"
@@ -78,7 +78,50 @@
     </nav>
     <!-- MAIN Section -->
     <main class="flex-shrink-0">
-      <div class="container"></div>
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-12 col-md-5">
+            <h1 class="border-1 border-bottom border-dark">
+              Racecar: A Coding Project
+            </h1>
+            <h4 class="lead">
+              Is it Racecar or racecaR? The program checks any text you input
+              and tells you whether or not it is a palindrome.
+            </h4>
+            <h2 class="mt-5 border-1 border-bottom border-dark">
+              Insctructions
+            </h2>
+            <p>
+              Write a word or a sentence in the input field and hit the button.
+              You will get an alert about whether or not your input is also a
+              palindrome.
+            </p>
+          </div>
+          <div class="col-12 col-md-7">
+            <h6>Enter a word or phase</h6>
+            <div class="col-12">
+              <input
+                id="palindromeInput"
+                class="form-control"
+                type="text"
+                placeholder="Racecar"
+                aria-label="Palindrome input"
+              />
+            </div>
+            <div class="col-12 mt-2 d-flex justify-content-end">
+              <button id="btnSubmit" type="button" class="btn btn-danger">
+                Palindromize!
+              </button>
+            </div>
+            <div class="col-12 mt-5">
+              <h5 class="border-1 border-bottom border-dark">Result</h5>
+              <p id="results">
+                <!-- Results go here -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- FOOTER Section -->
     <footer class="footer mt-auto py-3 bg-dark sticky-footer">
