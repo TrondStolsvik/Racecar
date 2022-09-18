@@ -104,7 +104,6 @@
                 id="palindromeInput"
                 class="form-control"
                 type="text"
-                placeholder="Racecar"
                 aria-label="Palindrome input"
               />
             </div>
@@ -115,9 +114,13 @@
             </div>
             <div class="col-12 mt-5">
               <h5 class="border-1 border-bottom border-dark">Result</h5>
-              <p id="results">
+              <div
+                id="results"
+                class="alert alert-danger invisible fade show"
+                role="alert"
+              >
                 <!-- Results go here -->
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -181,5 +184,8 @@
 
     <!-- Custom Scripts -->
     <script src="js/scripts.js"></script>
+    <script>
+      document.getElementById("results").addEventListener("click", getString);
+    </script>
   </body>
 </html>
