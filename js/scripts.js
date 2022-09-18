@@ -11,19 +11,20 @@ function getString() {
   //Call stringReverse with the parameter palInput and store it in a new variable called revInput
   let revInput = stringReverse(palInput);
 
-  //Call palCheck and pass it the variables palInput and revInput and store it in a variable called newString
+  //Call palCheck and pass it the variables palInput and revInput and store it's result in a variable called newString
   let newString = palCheck(palInput, revInput);
 
+  //Call palDisplay and pass it the variable newString so that we can display our result
   palDisplay(newString);
 }
 
 function stringReverse(palInput) {
-  //Declare a new variable called revString to store the reversed string
+  //Declare a new empty array called revString to store the reversed string
   let revString = [];
 
   //For-loop through the string to reverse it
   for (let i = palInput.length - 1; i >= 0; i--) {
-    //Push the indexes from the string into a new variable called revString, starting from the end of the string
+    //Concatenate the indexes from the string palInput into revString, starting from the end of the string
     revString += palInput[i];
   }
 
@@ -33,21 +34,24 @@ function stringReverse(palInput) {
 
 function palCheck(palInput, revInput) {
   //Store the data from the parameter palInput in a variable called palInutCheck
-  let palInputCheck = palInput;
+  //We also remove spaces and special characters using .replace
+  let palInputCheck = palInput.replace(/[^a-zA-Z0-9]/g, "");
 
   //Store the data from the parameter revInput in a variable called revInputCheck
-  let revInputCheck = revInput;
+  //We also remove spaces and special characters using .replace
+  let revInputCheck = revInput.replace(/[^a-zA-Z0-9]/g, "");
 
-  //Use an if-statement to check if palInputCheck is equal to revInputCheck (force lower case for check if needed)
+  //Use an if-statement to check if palInputCheck is equal to revInputCheck and force lower case for the check only
   if (palInputCheck.toLowerCase() == revInputCheck.toLowerCase()) {
-    //Concatenate the input to a string in a new variable and if they are a match return revInputCheck
-    let newString = `Your string is a palindrome! It was reversed as: ${revInputCheck}`;
+    //If they are a match, concatenate the input to a string in a new variable called newString and return newString
+    let newString = `Great! Your string is a palindrome! It was reversed as: ${revInputCheck}`;
 
     return newString;
   }
   //return palInputCheck
   else {
-    let newString = `Your string is not a palindrome. It was reversed as: ${revInputCheck}`;
+    //If they are not a match, concatenate the input to a different string in a new variable called newString and return newString
+    let newString = `Oh no! Your string is not a palindrome. It was reversed as: ${revInputCheck}`;
 
     return newString;
   }
