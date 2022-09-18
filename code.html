@@ -160,11 +160,57 @@
             </pre>
           </div>
           <div class="col-12 col-md-4">
-            <p>The Code is structured in one function.</p>
-            <h5>HelloWorld()</h5>
+            <p>The Code is structured in four functions.</p>
+            <h5>getString()</h5>
             <p>
-              HelloWorld() is a function that displays an alert with a message
-              of "Hello World!"
+              The function getString is responsible for clearing the HTML when
+              we start. It also adds the class "invisible" to the results ID to
+              make sure the results are hidden until we're ready to display.<br /><br />Next
+              we collect the value from the input and store it in the variable
+              palInput. We pass that variable to the function stringReverse()
+              and store it's result in the variable revInput.<br /><br />Next we
+              pass the variable revInput to the function palCheck() and we store
+              those results in the variable newString, which we finally pass to
+              the function palDisplay() so that we can show our result.
+            </p>
+            <h5>stringReverse()</h5>
+            <p>
+              The function stringReverse() is responsible for reversing our
+              string so that we can check it against the original string and
+              determine if it's a palindrome or not.<br /><br />First we declare
+              an empty array to hold our reversed string, we call it
+              revString.<br /><br />Next we use a for-loop to reverse through
+              the string one iteration at a time. For each index of the
+              string/array, we concatenate the result to the array we declared
+              earlier, revString.<br /><br />Once we're done with the loop, we
+              return revString.
+            </p>
+            <h5>palCheck()</h5>
+            <p>
+              The function palCheck() is responsible for checking the original
+              string, palInput, against our reversed string, revInput. We
+              declare a variable for each, palInputCheck and revInputCheck where
+              we store the inputs, but make note that we also make sure to
+              remove special characters and spaces by doing a .replace on our
+              inputs, replacing everything but a-z (lower and upper case) and
+              0-9 with an empty string "".<br /><br />Next we use an
+              if-statement to check whether or not our inputs are equal to one
+              another. We also force the check to be in lower case, so that case
+              sensitivity is not an issue.<br /><br />If the strings are a
+              match, we declare a new variable called newString and store a
+              string within it notifying the user that they did indeed enter a
+              palindrome. We pass the reversed input into the string, using a
+              template literal.<br /><br />If the strings are not a match, we
+              have the else-portion which essentially does the same, except the
+              string itself will notify the user that it was in fact not a
+              palindrome.
+            </p>
+            <h5>palDisplay()</h5>
+            <p>
+              The function palDisplay() takes the parameter readyString which is
+              the final string ready for display.<br /><br />It removes the
+              "invisible" class from the "results" ID and then injects
+              readyString into the HTML at the "results" ID.
             </p>
           </div>
         </div>
